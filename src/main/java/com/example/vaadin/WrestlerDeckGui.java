@@ -27,6 +27,8 @@ public class WrestlerDeckGui extends VerticalLayout {
         grid.removeColumnByKey("image");
         grid.addColumn(new ComponentRenderer<>(wrestler -> {
                     Image image = new Image(wrestler.getImage(), wrestler.getName() );
+                    image.setMaxWidth("200px");
+                    image.setMaxHeight("200px");
                     return image;
                 })).setHeader("Image");
 

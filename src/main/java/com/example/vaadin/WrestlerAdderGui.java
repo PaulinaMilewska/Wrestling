@@ -29,13 +29,15 @@ public class WrestlerAdderGui extends VerticalLayout {
         TextField textFieldName = new TextField("name");
         TextField textFieldImage = new TextField("image");
         ComboBox<WrestlingOrganisationType> wrestlerTypeComboBox = new ComboBox<>("Wrestling organisation: ", WrestlingOrganisationType.values());
-        Button buttonAdd = new Button("Add new Wrestler");
+        Button buttonAdd = new Button("Add Wrestler");
 
 
         buttonAdd.addClickListener(buttonClickEvent -> {
             Wrestler wrestler = new Wrestler();
             wrestler.setName(textFieldName.getValue());
             wrestler.setImage(textFieldImage.getValue());
+            textFieldImage.setMaxHeight("200px");
+            textFieldImage.setMaxWidth("200px");
             wrestler.setWrestlingOrganisationType(wrestlerTypeComboBox.getValue());
             wrestlerDeck.getWrestlerList().add(wrestler);
             Notification notification = new Notification(
