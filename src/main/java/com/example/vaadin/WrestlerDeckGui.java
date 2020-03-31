@@ -1,6 +1,7 @@
 package com.example.vaadin;
 
 import com.example.vaadin.model.Wrestler;
+import com.example.vaadin.model.WrestlingOrganisationType;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
@@ -15,6 +16,10 @@ public class WrestlerDeckGui extends VerticalLayout {
 
     @Autowired
     public WrestlerDeckGui(WrestlerDeck wrestlerDeck) {
+
+
+
+
         Button returnButton = new Button("Menu", event -> {
             UI.getCurrent().navigate("");
         });
@@ -25,6 +30,7 @@ public class WrestlerDeckGui extends VerticalLayout {
         grid.setItems(wrestlerDeck.getWrestlerList());
 
         grid.removeColumnByKey("image");
+        grid.removeColumnByKey("id");
         grid.addColumn(new ComponentRenderer<>(wrestler -> {
                     Image image = new Image(wrestler.getImage(), wrestler.getName() );
                     image.setMaxWidth("200px");
