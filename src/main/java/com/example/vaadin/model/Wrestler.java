@@ -1,18 +1,28 @@
 package com.example.vaadin.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="wrestlers")
+@Data
+@AllArgsConstructor
 public class Wrestler {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Integer id;
     @Column(name = "name")
     private String name;
     @Column(name = "wrestlingOrganisationType")
+    @Enumerated(EnumType.STRING)
     private WrestlingOrganisationType wrestlingOrganisationType;
     @Column(name = "image")
     private String image;
