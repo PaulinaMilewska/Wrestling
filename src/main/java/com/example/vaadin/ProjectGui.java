@@ -21,6 +21,7 @@ public class ProjectGui extends VerticalLayout {
         Label label = new Label();
 
         buttonHello.addClickListener(buttonClickEvent -> {label.setText("Hello "+ textFieldHello.getValue());
+
         add(new Image("https://media.tenor.com/images/1170597818a37a7c6e3e1d4baeb6e2eb/tenor.gif", "hello"));
         });
 

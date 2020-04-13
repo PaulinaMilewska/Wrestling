@@ -37,7 +37,5 @@ public class WrestlerManager {
                wrestler.setWrestlingOrganisationType(type);
                wrestler.setImage(image);
                repository.save(wrestler);
-
-
     }
 }
